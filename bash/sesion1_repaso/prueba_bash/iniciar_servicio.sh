@@ -1,8 +1,8 @@
 #!/bin/bash
 
 servicio=$1
-if [[ -z $servicio ]]; then
-    echo "Debes indicar el nombre del servicio"
-else
+if [[ -n $servicio ]]; then
     echo "Iniciando el servicio $servicio..."
+else
+    echo "Debes indicar el nombre del servicio"
 fi
