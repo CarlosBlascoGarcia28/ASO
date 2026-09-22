@@ -1,10 +1,12 @@
 #!/bin/bash
 
 for linea in ~/ASO/bash/sesion1_repaso/prueba_bash/*; do
-    basename $linea
-    if [[ -f $linea ]]; then
-        echo "archivo"
+    nombre=$(basename "$linea")
+    if [[ -d $linea ]]; then
+        echo "$nombre: directorio"
+    elif [[ -f $linea ]]; then
+        echo "$nombre: archivo"
     else
-        echo "directorio"
+        echo "la entrada no es válida"
     fi
 done
