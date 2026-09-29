@@ -7,7 +7,7 @@ pedir_puerto_valido() {
             echo "Error: debes introducir solo números."
             continue
         fi
-        if (( puerto < 1 || puerto > 65535 )); then
+        if [[ $puerto -lt 1  ]] || [[ $puerto -gt 65535 ]]; then
             echo "Error: el puerto debe estar entre 1 y 65535."
             continue
         fi
