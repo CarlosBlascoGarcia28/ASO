@@ -2,8 +2,8 @@
 
 contador=0
 while read -r linea; do
-    echo "${linea%%:*}"
-    if [[ ${linea%%:*} ]]; then
+    if [[ $linea =~ bash$ ]]; then
+        echo "${linea%%:*}"
         contador=$((contador + 1))
     fi
 done < /etc/passwd
