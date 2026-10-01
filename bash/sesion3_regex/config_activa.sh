@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 = "" ]]; then
+if [[ -z $1 ]]; then
     fichero="/etc/login.defs"
 else
     fichero="$1"
@@ -11,5 +11,8 @@ if [[ ! -f $fichero ]]; then
     break
 fi
 grep -v -e ^# -e "^$" $fichero
-
+total=$(wc -l < "$fichero")
+utiles=$(grep -Ec '^[[:space:]]*[^#[:space:]]' "$fichero")
+echo "Total de líneas: $total"
+echo "Líneas útiles: $utiles"
 # PASS_MAX_DAYS Define la validez temporal de una contraseña del sistema antes de caducar. 
