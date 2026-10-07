@@ -1,3 +1,5 @@
+#!/bin/bash
+
 correo=$1
 re='^[a-z0-9._]+@(edu\.gva\.es|alu\.edu\.gva\.es)$'
 
