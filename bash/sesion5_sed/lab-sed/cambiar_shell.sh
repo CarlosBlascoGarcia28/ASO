@@ -24,5 +24,5 @@ if ! grep -q "^${usuario}:" "$archivo"; then
     exit 1
 fi
 
-sed -i.bak "s|^\(${usuario}:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:\).*|\1${shell}|" "$archivo"
+sed -Ei.bak "/^$usuario:/s|[^:]*$|$shell|" /etc/passwd
 grep "^${usuario}:" "$archivo"
