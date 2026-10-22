@@ -2,7 +2,7 @@
 
 shell_buscada=${1-/bin/bash}
 
-if [[ ! $shell_buscada =~ ^/[a-z]+(/[a-z]+)*$ ]]; then
+if [[ ! $shell_buscada =~ ^(/[a-z]+)+*$ ]]; then
     echo "Error: $shell_buscada no es una ruta válida"
     exit 1
 fi
